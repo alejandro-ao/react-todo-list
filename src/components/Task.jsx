@@ -1,10 +1,11 @@
 const Task = ({ taskName, checked }) => {
-  return (
-<div className="task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
-    {taskName}
-    <button className="btn btn-secondary">Mark as finished</button>
-</div>
+  let crossed = checked ? "crossed" : "";
 
+  return (
+    <div className="task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
+      <div className={crossed}>{taskName}</div>
+      <button className="btn btn-secondary">Mark as finished</button>
+    </div>
   );
 };
 
