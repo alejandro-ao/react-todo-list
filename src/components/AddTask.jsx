@@ -8,7 +8,7 @@ const AddTask = () => {
         <input type="text" class="form-control" id="newTask" aria-describedby="emailHelp" />
       </div>
       <button type="submit" class="btn btn-primary">
-        Add
+        Add new task
       </button>
     </form>
   );

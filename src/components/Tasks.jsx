@@ -38,7 +38,7 @@ const Tasks = () => {
   return (
     <div className="todo-list__tasks mt-3">
       {tasks.map((task) => (
-        <Task key={task.id} taskName={task.name} checked={task.checked} />
+        <Task key={task.id} taskName={task.name} finished={task.checked} />
       ))}
     </div>
   );
