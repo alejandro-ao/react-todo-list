@@ -5,13 +5,13 @@ const Tasks = ({ tasks, handleDelete, handleFinished }) => {
     <div className="todo-list__tasks mt-3">
       {tasks.map((task) => {
         if (!task.checked) {
-          return <Task key={task.id} taskName={task.name} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
+          return <Task key={task.id} taskName={task.name} description={task.description} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
         }
       })}
 
       {tasks.map((task) => {
         if (task.checked) {
-          return <Task key={task.id} taskName={task.name} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
+          return <Task key={task.id} taskName={task.name} description={task.description} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
         }
       })}
     </div>
