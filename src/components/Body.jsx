@@ -1,11 +1,15 @@
 import AddTask from "./AddTask";
 import Tasks from "./Tasks";
 
-const Body = () => {
+const Body = ({ tasks, handleDelete, handleFinished }) => {
   return (
     <div className="todo-list__body mt-5">
       <AddTask />
-      <Tasks />
+      <Tasks
+        tasks={tasks}
+        handleDelete={handleDelete}
+        handleFinished={handleFinished}
+      />
     </div>
   );
 };

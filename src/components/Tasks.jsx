@@ -1,45 +1,19 @@
-import { useState } from "react";
 import Task from "./Task";
 
-const Tasks = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: "call friend",
-      checked: false,
-    },
-    {
-      id: 2,
-      name: "call mother",
-      checked: true,
-    },
-    {
-      id: 3,
-      name: "call brother",
-      checked: true,
-    },
-    {
-      id: 4,
-      name: "call friend",
-      checked: false,
-    },
-    {
-      id: 5,
-      name: "call mother",
-      checked: true,
-    },
-    {
-      id: 6,
-      name: "call brother",
-      checked: true,
-    },
-  ]);
-
+const Tasks = ({ tasks, handleDelete, handleFinished }) => {
   return (
     <div className="todo-list__tasks mt-3">
-      {tasks.map((task) => (
-        <Task key={task.id} taskName={task.name} finished={task.checked} />
-      ))}
+      {tasks.map((task) => {
+        if (!task.checked) {
+          return <Task key={task.id} taskName={task.name} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
+        }
+      })}
+
+      {tasks.map((task) => {
+        if (task.checked) {
+          return <Task key={task.id} taskName={task.name} finished={task.checked} handleDelete={() => handleDelete(task.id)} handleFinished={() => handleFinished(task.id)} />;
+        }
+      })}
     </div>
   );
 };
