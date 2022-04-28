@@ -57,12 +57,24 @@ function App() {
     // console.log(`task ${id} finished`);
   };
 
+  const addTask = (task) => {
+    let id = Math.floor(Math.random() * 10000000 + 1);
+    setTasks([
+      ...tasks,
+      {
+        id: id,
+        ...task,
+      },
+    ]);
+    console.log("add the task: ", task);
+  };
+
   return (
     <div className="App">
       <div className="container border rounded p-5 mt-5">
         <Header />
 
-        <Body tasks={tasks} handleDelete={deleteTask} handleFinished={markAsFinished} />
+        <Body tasks={tasks} handleDelete={deleteTask} handleFinished={markAsFinished} handleAddTask={addTask} />
 
         <Footer />
       </div>
