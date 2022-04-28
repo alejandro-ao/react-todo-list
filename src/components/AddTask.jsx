@@ -1,13 +1,13 @@
 const AddTask = () => {
   return (
     <form action="post">
-      <div class="mb-3">
-        <label for="newTask" class="form-label">
+      <div className="mb-3">
+        <label htmlFor="newTask" className="form-label">
           Your new task:
         </label>
-        <input type="text" class="form-control" id="newTask" aria-describedby="emailHelp" />
+        <input type="text" className="form-control" id="newTask" aria-describedby="emailHelp" />
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Add new task
       </button>
     </form>
