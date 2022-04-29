@@ -10,7 +10,7 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      name: "call friend",
+      name: "cook pasta",
       checked: false,
     },
     {
@@ -20,22 +20,22 @@ function App() {
     },
     {
       id: 3,
-      name: "call brother",
+      name: "go to work",
       checked: true,
     },
     {
       id: 4,
-      name: "call friend",
+      name: "remember to buy tickets to concert ",
       checked: false,
     },
     {
       id: 5,
-      name: "call mother",
+      name: "smoke ewek everyday",
       checked: true,
     },
     {
       id: 6,
-      name: "call brother",
+      name: "do research on astronomy",
       checked: true,
     },
   ]);
@@ -69,12 +69,24 @@ function App() {
     console.log("add the task: ", task);
   };
 
+  const editTask = (id) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          task.editing = !task.editing;
+        }
+        return task;
+      })
+    );
+    console.log("We will edit task with the id: ", id);
+  };
+
   return (
     <div className="App">
       <div className="container border rounded p-5 mt-5">
         <Header />
 
-        <Body tasks={tasks} handleDelete={deleteTask} handleFinished={markAsFinished} handleAddTask={addTask} />
+        <Body tasks={tasks} handleDelete={deleteTask} handleFinished={markAsFinished} handleAddTask={addTask} handleEdit={editTask} />
 
         <Footer />
       </div>
