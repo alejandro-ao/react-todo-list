@@ -8,10 +8,7 @@ const Tasks = ({ tasks, handleDelete, handleFinished, handleEdit }) => {
           return (
             <Task
               key={task.id}
-              taskName={task.name}
-              description={task.description}
-              finished={task.checked}
-              editing={task.editing}
+              taskData={task}
               handleDelete={() => handleDelete(task.id)}
               handleFinished={() => handleFinished(task.id)}
               handleEdit={() => handleEdit(task.id)}
@@ -25,10 +22,7 @@ const Tasks = ({ tasks, handleDelete, handleFinished, handleEdit }) => {
           return (
             <Task
               key={task.id}
-              taskName={task.name}
-              description={task.description}
-              finished={task.checked}
-              editing={task.editing}
+              taskData={task}
               handleDelete={() => handleDelete(task.id)}
               handleFinished={() => handleFinished(task.id)}
               handleEdit={() => handleEdit(task.id)}
