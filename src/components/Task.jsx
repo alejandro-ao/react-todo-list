@@ -1,5 +1,6 @@
 import { useState } from "react";
 import EditTask from "./EditTask";
+import TaskInfo from "./TaskInfo";
 
 const Task = ({ taskData, handleDelete, handleFinished }) => {
   const [task, setTask] = useState({
@@ -14,15 +15,13 @@ const Task = ({ taskData, handleDelete, handleFinished }) => {
     setTask({ ...task, editing: !task.editing });
   };
 
+  const updateTask = (newName, newDescription) => {
+    console.log(newName, newDescription);
+  }
+
   return (
     <div className="task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
-      {task.editing && <EditTask />}
-
-      <div>
-        <p>{task.name}</p>
-        <small className="form-text text-muted">{task.description}</small>
-      </div>
-
+      {task.editing ? <EditTask name={task.name} description={task.description} updateTask={updateTask}/> : <TaskInfo name={task.name} description={task.description} />}
       <div>
         <div>
           <button className="btn btn-outline-secondary w-100 mb-1" onClick={handleEdit}>
