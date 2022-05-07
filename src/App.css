@@ -28,7 +28,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(45deg, #5d67ce 50%, #ae6eb4);
+  background-image: linear-gradient(45deg, #5d67ce, #ae6eb4);
   color: #fff;
 }
 
@@ -48,8 +48,8 @@ body {
   color: #fff;
 }
 
-.btn--glass {
-  background-color: #ae6eb443;
+.btn--purple {
+  background-color: #5d67ce;
   color: #fff;
 }
 
@@ -73,6 +73,19 @@ body {
   box-shadow: 0 0 10px #ccc;
   padding: 3rem;
   width: clamp(350px, 500px, 80vw);
+  transform-origin: top;
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  0% {
+    /* transform: scaleY(0); */
+    opacity: 0;
+  }
+  100% {
+    /* transform: scaleY(1); */
+    opacity: 1;
+  }
 }
 
 .todo-list__add label {
@@ -83,6 +96,7 @@ body {
 }
 
 .todo-list__task {
+  animation: appear 1s ease;
   display: flex;
   gap: 1rem;
   margin: 2rem 0;
@@ -141,6 +155,11 @@ textarea {
   border-radius: 5px;
   color: #fff;
   font-size: 1.1rem;
+}
+
+.todo-list__task input,
+.todo-list__task textarea {
+  font-size: 0.9rem;
 }
 
 .crossed {

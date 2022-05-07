@@ -26,7 +26,7 @@ const EditTask = ({ name, description, updateTask }) => {
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
         ></textarea>
-        <button className="btn btn--glass btn--small"  type="submit">
+        <button className="btn btn--violet btn--small"  type="submit">
           Save
         </button>
       </form>
