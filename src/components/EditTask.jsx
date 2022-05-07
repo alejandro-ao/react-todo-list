@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
 
 const EditTask = ({ name, description, updateTask }) => {
   const [newTitle, setNewTitle] = useState(name);
@@ -16,17 +15,17 @@ const EditTask = ({ name, description, updateTask }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder=""
+          placeholder="New title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
         />
-        <textarea
+        <input
           type="text"
           placeholder="New description"
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
-        ></textarea>
-        <button className="btn btn--violet btn--small"  type="submit">
+        ></input>
+        <button className="btn btn--violet"  type="submit">
           Save
         </button>
       </form>

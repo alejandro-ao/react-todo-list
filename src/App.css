@@ -53,10 +53,6 @@ body {
   color: #fff;
 }
 
-.btn--small {
-  font-size: 0.9rem;
-}
-
 .btn:hover {
   box-shadow: 0 0 5px #fff;
   cursor: pointer;
@@ -110,7 +106,9 @@ body {
   padding: 1rem 1rem;
 }
 .todo-list__task__actions button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   border: none;
   padding: 0.5em;
@@ -120,7 +118,7 @@ body {
 }
 .todo-list__task__actions button:hover {
   text-shadow: 0 0 5px #fff;
-  border-radius: 50%;
+  border-radius: 10px;
   background-color: #ae6eb4;
   cursor: pointer;
 }
