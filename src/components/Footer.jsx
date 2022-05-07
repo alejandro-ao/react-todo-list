@@ -1,5 +1,13 @@
+import { FaGithub } from "react-icons/fa";
+
 const Footer = () => {
-  return <div className="todo-list__footer mt-5">Thank you for using Hanabi Todo List</div>;
+  return (
+    <footer className="todo-list__footer text-center">
+      <a href="https://github.com/aavila0707/mern-todo-list" target="_blank">
+        Check out source code on Github <FaGithub />
+      </a>
+    </footer>
+  );
 };
 
 export default Footer;

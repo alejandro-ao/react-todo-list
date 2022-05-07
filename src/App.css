@@ -1,3 +1,4 @@
+/* SETUP */
 * {
   box-sizing: border-box;
 }
@@ -42,6 +43,10 @@ body {
   flex-direction: column;
   align-items: start;
   justify-content: center;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 /* GENERAL */
@@ -162,6 +167,18 @@ textarea {
 .todo-list__task input,
 .todo-list__task textarea {
   font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 2rem;
+}
+footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+footer a:hover {
+  color: #ccc;
 }
 
 
