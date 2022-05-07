@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   width: 100%;
   min-height: 100vh;
@@ -39,12 +38,11 @@ body {
 
 .todo-list {
   margin: 3rem 0;
-  max-width: 80%;
   margin-inline: auto;
-  /* border: solid 1px #ccc; */
   border-radius: 0.5rem;
   box-shadow: 0 0 10px #ccc;
   padding: 3rem;
+  width: clamp(350px, 500px, 80vw);
 }
 
 .todo-list__add label {
@@ -53,7 +51,39 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
 }
-.todo-list__add input {
+
+.todo-list__task {
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.128);
+  backdrop-filter: opacity(0.3);
+
+  border-radius: 5px;
+  padding: 1rem 1rem;
+}
+.todo-list__task button {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 0.5em;
+  color: #fff;
+  font-size: 1.2rem;
+  aspect-ratio: 1/1;
+}
+.todo-list__task button:hover {
+  text-shadow: 0 0 5px #fff;
+  cursor: pointer;
+}
+
+.todo-list__task__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
   width: 100%;
   max-width: 100%;
   margin: 0.5rem 0;

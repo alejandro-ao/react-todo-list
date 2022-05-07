@@ -1,6 +1,7 @@
 import { useState } from "react";
 import EditTask from "./EditTask";
 import TaskInfo from "./TaskInfo";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 const Task = ({ taskData, handleDelete }) => {
   const [task, setTask] = useState({
@@ -29,7 +30,7 @@ const Task = ({ taskData, handleDelete }) => {
   };
 
   return (
-    <div className="task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
+    <div className="todo-list__task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
       {task.editing ? (
         <EditTask
           name={task.name}
@@ -43,8 +44,15 @@ const Task = ({ taskData, handleDelete }) => {
           finished={task.finished}
         />
       )}
-      <div className="task__actions">
-        <button
+      <div className="todo-list__task__actions">
+        <button onClick={editTask}>
+          <FaEdit />
+        </button>
+        <button onClick={handleDelete}>
+          <FaTrashAlt />
+        </button>
+
+        {/* <button
           className="btn btn-outline-secondary w-100 mb-1"
           onClick={editTask}
         >
@@ -61,7 +69,7 @@ const Task = ({ taskData, handleDelete }) => {
         </button>
         <button className="btn w-100 " onClick={() => console.log(task)}>
           test
-        </button>
+        </button> */}
       </div>
     </div>
   );
