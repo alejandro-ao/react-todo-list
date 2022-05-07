@@ -32,6 +32,19 @@ body {
   color: #fff;
 }
 
+/* UTILITIES */
+.crossed {
+  text-decoration: line-through;
+}
+
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+/* GENERAL */
 .btn {
   border: none;
   border-radius: 5px;
@@ -62,6 +75,21 @@ body {
   margin-bottom: 1rem;
 }
 
+input,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  line-height: 2em;
+  padding: 0.2em 1em;
+  background-color: transparent;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* CONTAINER */
 .todo-list {
   margin: 3rem 0;
   margin-inline: auto;
@@ -73,17 +101,7 @@ body {
   animation: appear 1s ease;
 }
 
-@keyframes appear {
-  0% {
-    /* transform: scaleY(0); */
-    opacity: 0;
-  }
-  100% {
-    /* transform: scaleY(1); */
-    opacity: 1;
-  }
-}
-
+/* ADD TASK */
 .todo-list__add label {
   display: block;
   width: 100%;
@@ -91,19 +109,26 @@ body {
   font-size: 0.9rem;
 }
 
+/* TASK */
 .todo-list__task {
   animation: appear 1s ease;
   display: flex;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
   justify-content: space-between;
   align-items: center;
 
   background-color: rgba(255, 255, 255, 0.128);
-  backdrop-filter: opacity(0.3);
 
   border-radius: 5px;
   padding: 1rem 1rem;
+}
+.todo-list__task__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.editing .todo-list__task__actions {
+  flex-direction: column;
 }
 .todo-list__task__actions button {
   display: flex;
@@ -133,40 +158,21 @@ body {
 .todo-list__task__info div {
   flex: 5;
 }
-.todo-list__task__actions {
-  display: flex;
-  gap: 0.5rem;
-}
-.editing .todo-list__task__actions {
-  flex-direction: column;
-}
-
-input,
-textarea {
-  width: 100%;
-  max-width: 100%;
-  margin: 0.5rem 0;
-  line-height: 2em;
-  padding: 0.2em 1em;
-  background-color: transparent;
-  border: 1px #ccc solid;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 1.1rem;
-}
 
 .todo-list__task input,
 .todo-list__task textarea {
   font-size: 0.9rem;
 }
 
-.crossed {
-  text-decoration: line-through;
-}
 
-.center-vertical {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
+/* ANIMATIONS */
+@keyframes appear {
+  0% {
+    /* transform: scaleY(0); */
+    opacity: 0;
+  }
+  100% {
+    /* transform: scaleY(1); */
+    opacity: 1;
+  }
 }

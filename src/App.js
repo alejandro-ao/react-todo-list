@@ -10,46 +10,12 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      name: "Visiter l'Église Saint Sernin",
-      description: "Sit at a café",
+      name: "Welcome to Hanabi",
+      description: "Add a new task",
       finished: false,
       editing: false,
     },
-    {
-      id: 2,
-      name: "Boire du vin sur le bord de la Garonne",
-      description: "",
-      finished: false,
-      editing: false,
-    },
-    {
-      id: 3,
-      name: "Boire du vin sur le bord de la Garonne",
-      description: "",
-      finished: false,
-      editing: false,
-    },
-    {
-      id: 4,
-      name: "Watch a film",
-      description: "",
-      finished: false,
-      editing: false,
-    },
-    {
-      id: 5,
-      name: "Smoke weed everyday",
-      description: "",
-      finished: false,
-      editing: false,
-    },
-    {
-      id: 6,
-      name: "do research on astronomy",
-      description: "",
-      finished: false,
-      editing: false,
-    },
+  
   ]);
 
   const deleteTask = (id) => {
