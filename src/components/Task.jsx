@@ -30,12 +30,30 @@ const Task = ({ taskData, handleDelete }) => {
 
   return (
     <div className="task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
-      {task.editing ? <EditTask name={task.name} description={task.description} updateTask={updateTask} /> : <TaskInfo name={task.name} description={task.description} finished={task.finished} />}
+      {task.editing ? (
+        <EditTask
+          name={task.name}
+          description={task.description}
+          updateTask={updateTask}
+        />
+      ) : (
+        <TaskInfo
+          name={task.name}
+          description={task.description}
+          finished={task.finished}
+        />
+      )}
       <div className="task__actions">
-        <button className="btn btn-outline-secondary w-100 mb-1" onClick={editTask}>
+        <button
+          className="btn btn-outline-secondary w-100 mb-1"
+          onClick={editTask}
+        >
           Edit
         </button>
-        <button className="btn btn-outline-secondary w-100 mb-1" onClick={handleDelete}>
+        <button
+          className="btn btn-outline-secondary w-100 mb-1"
+          onClick={handleDelete}
+        >
           Delete
         </button>
         <button className="btn btn-secondary w-100 mb-1" onClick={finishTask}>
