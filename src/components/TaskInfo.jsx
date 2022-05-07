@@ -6,7 +6,7 @@ const TaskInfo = ({ name, description, finished, handleChecked }) => {
       ) : (
         <input type="checkbox" name="" id="" onClick={(e) => handleChecked(e)} />
       )}
-      <div>
+      <div className="center-vertical">
         <p className={finished ? "crossed" : ""}>{name}</p>
         <small className="form-text text-muted">{description}</small>
       </div>

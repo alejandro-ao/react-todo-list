@@ -131,3 +131,10 @@ textarea {
 .crossed {
   text-decoration: line-through;
 }
+
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
