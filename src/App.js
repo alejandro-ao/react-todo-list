@@ -57,15 +57,15 @@ function App() {
   };
 
   const markAsFinished = (id) => {
-    setTasks(
-      // return array of all tasks w the task of id -> !task.checked
-      tasks.map((task) => {
-        if (task.id === id) {
-          task.checked = !task.checked;
-        }
-        return task;
-      })
-    );
+    // setTasks(
+    //   // return array of all tasks w the task of id -> !task.checked
+    //   tasks.map((task) => {
+    //     if (task.id === id) {
+    //       task.checked = !task.checked;
+    //     }
+    //     return task;
+    //   })
+    // );
     // console.log(`task ${id} finished`);
   };
 

@@ -11,10 +11,15 @@ const EditTask = ({ name, description, updateTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
-      <textarea type="text" placeholder="New description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)}></textarea>
-    </form>
+    <div className="task__edit">
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+        <textarea type="text" placeholder="New description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)}></textarea>
+        <button className="btn btn-primary" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
   );
 };
 

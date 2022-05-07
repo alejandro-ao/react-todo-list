@@ -1,7 +1,7 @@
-const TaskInfo = ({ name, description }) => {
+const TaskInfo = ({ name, description, finished }) => {
   return (
-    <div>
-      <p>{name}</p>
+    <div className="task__info">
+      <p className={finished ? "crossed" : ""}>{name}</p>
       <small className="form-text text-muted">{description}</small>
     </div>
   );
