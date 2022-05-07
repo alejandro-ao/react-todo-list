@@ -22,17 +22,28 @@ body {
   border-radius: 5px;
   padding: 1rem 2rem;
   width: 100%;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .btn--violet {
   background-color: #ae6eb4;
   color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
 }
 
-.btn--violet:hover {
-  box-shadow: 0 0 10px #fff;
+.btn--glass {
+  background-color: #ae6eb443;
+  color: #fff;
+}
+
+.btn--small {
+font-size: 0.9rem;
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px #fff;
   cursor: pointer;
 }
 
@@ -58,6 +69,7 @@ body {
 
 .todo-list__task {
   display: flex;
+  gap: 1rem;
   margin: 2rem 0;
   justify-content: space-between;
   align-items: center;
@@ -68,7 +80,7 @@ body {
   border-radius: 5px;
   padding: 1rem 1rem;
 }
-.todo-list__task button {
+.todo-list__task__actions button {
   display: inline-block;
   background-color: transparent;
   border: none;
@@ -77,19 +89,33 @@ body {
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
-.todo-list__task button:hover {
+.todo-list__task__actions button:hover {
   text-shadow: 0 0 5px #fff;
   border-radius: 50%;
   background-color: #ae6eb4;
   cursor: pointer;
 }
 
+.todo-list__task__info {
+  display: flex;
+  flex: 2;
+}
+.todo-list__task__info input {
+  flex: 1;
+}
+.todo-list__task__info div {
+  flex: 5;
+}
 .todo-list__task__actions {
   display: flex;
   gap: 0.5rem;
 }
+.editing .todo-list__task__actions {
+  flex-direction: column;
+}
 
-input {
+input,
+textarea {
   width: 100%;
   max-width: 100%;
   margin: 0.5rem 0;

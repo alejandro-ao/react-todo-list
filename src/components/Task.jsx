@@ -25,12 +25,18 @@ const Task = ({ taskData, handleDelete }) => {
     });
   };
 
+  const handleChecked = (e) => {
+    e.target.checked
+      ? setTask({ ...task, finished: true })
+      : setTask({ ...task, finished: false });
+  };
+
   const finishTask = () => {
     setTask({ ...task, finished: !task.finished });
   };
 
   return (
-    <div className="todo-list__task d-flex justify-content-between align-items-center border rounded p-3 mb-1">
+    <div className={task.editing ? "todo-list__task editing" : "todo-list__task"}>
       {task.editing ? (
         <EditTask
           name={task.name}
@@ -42,6 +48,7 @@ const Task = ({ taskData, handleDelete }) => {
           name={task.name}
           description={task.description}
           finished={task.finished}
+          handleChecked={handleChecked}
         />
       )}
       <div className="todo-list__task__actions">
@@ -51,25 +58,6 @@ const Task = ({ taskData, handleDelete }) => {
         <button onClick={handleDelete}>
           <FaTrashAlt />
         </button>
-
-        {/* <button
-          className="btn btn-outline-secondary w-100 mb-1"
-          onClick={editTask}
-        >
-          Edit
-        </button>
-        <button
-          className="btn btn-outline-secondary w-100 mb-1"
-          onClick={handleDelete}
-        >
-          Delete
-        </button>
-        <button className="btn btn-secondary w-100 mb-1" onClick={finishTask}>
-          Mark as finished
-        </button>
-        <button className="btn w-100 " onClick={() => console.log(task)}>
-          test
-        </button> */}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 
 const EditTask = ({ name, description, updateTask }) => {
   const [newTitle, setNewTitle] = useState(name);
@@ -11,11 +12,21 @@ const EditTask = ({ name, description, updateTask }) => {
   };
 
   return (
-    <div className="task__edit">
+    <div className="todo-list__task__edit">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
-        <textarea type="text" placeholder="New description" value={newDescription} onChange={(e) => setNewDescription(e.target.value)}></textarea>
-        <button className="btn btn-primary" type="submit">
+        <input
+          type="text"
+          placeholder=""
+          value={newTitle}
+          onChange={(e) => setNewTitle(e.target.value)}
+        />
+        <textarea
+          type="text"
+          placeholder="New description"
+          value={newDescription}
+          onChange={(e) => setNewDescription(e.target.value)}
+        ></textarea>
+        <button className="btn btn--glass btn--small"  type="submit">
           Save
         </button>
       </form>
