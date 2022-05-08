@@ -8,7 +8,7 @@ const TaskInfo = ({ name, description, finished, handleChecked }) => {
       )}
       <div className="center-vertical">
         <p className={finished ? "crossed" : ""}>{name}</p>
-        <small className="form-text text-muted">{description}</small>
+        <small>{description}</small>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -60,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="todo-list container border rounded p-5 mt-5">
+      <div className="todo-list">
         <Header handleAddTask={addTask} />
 
         <Body
