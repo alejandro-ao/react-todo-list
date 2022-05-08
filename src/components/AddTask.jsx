@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddTask = ({ handleAddTask }) => {
+const AddTask = ({ handleAddTask, setShowAddTask }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -15,6 +15,7 @@ const AddTask = ({ handleAddTask }) => {
         });
     setTitle("");
     setDescription("");
+    setShowAddTask(false);
   };
 
   return (

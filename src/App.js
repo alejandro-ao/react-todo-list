@@ -15,7 +15,6 @@ function App() {
       finished: false,
       editing: false,
     },
-  
   ]);
 
   const deleteTask = (id) => {
@@ -62,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <div className="todo-list container border rounded p-5 mt-5">
-        <Header />
+        <Header handleAddTask={addTask} />
 
         <Body
           tasks={tasks}
