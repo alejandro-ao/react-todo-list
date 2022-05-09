@@ -4,6 +4,13 @@ const AddTask = ({ handleAddTask, setShowAddTask }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  /**
+   * Handle submit event in Add Task form. Call the add task handler
+   * which will update the DB and the client.
+   * Reset the form to its initial state and hide the form. 
+   * 
+   * @param {Event} e 
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     !title

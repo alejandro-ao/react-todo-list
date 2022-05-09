@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -6,55 +6,57 @@ import Body from "./components/Body";
 import Footer from "./components/Footer";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      name: "Welcome to Hanabi",
-      description: "Add a new task",
-      finished: false,
-      editing: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  /**
+   * Load tasks in the DB to the client on window load.
+   */
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    };
+    getTasks();
+  }, []);
+
+  /**
+   * Get all the tasks form the DB.
+   *
+   * @return {object} data
+   */
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5001/tasks");
+    const data = await res.json();
+
+    return data;
   };
 
-  const markAsFinished = (id) => {
-    // setTasks(
-    //   // return array of all tasks w the task of id -> !task.checked
-    //   tasks.map((task) => {
-    //     if (task.id === id) {
-    //       task.checked = !task.checked;
-    //     }
-    //     return task;
-    //   })
-    // );
-    // console.log(`task ${id} finished`);
+  /**
+   * Remove a task from the DB and updates the client.
+   *
+   * @param {String} id
+   */
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5001/tasks/${id}`, { method: "DELETE" });
+    setTasks(tasks.filter((task) => task._id !== id));
   };
 
-  const addTask = (task) => {
-    let id = Math.floor(Math.random() * 10000000 + 1);
-    setTasks([
-      ...tasks,
-      {
-        id: id,
-        ...task,
+  /**
+   * Adds a task to the DB and updates the client.
+   *
+   * @param {Object} task
+   */
+  const addTask = async (task) => {
+    const res = await fetch(`http://localhost:5001/tasks`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
       },
-    ]);
-    console.log("add the task: ", task);
-  };
+      body: JSON.stringify(task),
+    });
 
-  const editTask = (id) => {
-    setTasks(
-      tasks.map((task) => {
-        if (task.id === id) {
-          task.editing = !task.editing;
-        }
-        return task;
-      })
-    );
-    console.log("We will edit task with the id: ", id);
+    const newTask = await res.json();
+    setTasks([...tasks, newTask]);
   };
 
   return (
@@ -62,13 +64,7 @@ function App() {
       <div className="todo-list">
         <Header handleAddTask={addTask} />
 
-        <Body
-          tasks={tasks}
-          handleDelete={deleteTask}
-          handleFinished={markAsFinished}
-          handleAddTask={addTask}
-          handleEdit={editTask}
-        />
+        <Body tasks={tasks} handleDelete={deleteTask} />
 
         <Footer />
       </div>
