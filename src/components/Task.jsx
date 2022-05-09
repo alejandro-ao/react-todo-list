@@ -13,7 +13,7 @@ const Task = ({ taskData, handleDelete }) => {
   });
 
   /**
-   * Handles click on "edit" and updates task's editing state.
+   * Handle click on "edit" and updates task's editing state.
    * Does not affect the DB.
    */
   const handleEditTask = () => {
@@ -21,7 +21,7 @@ const Task = ({ taskData, handleDelete }) => {
   };
 
   /**
-   * Updates the DB with a new name or description of a task
+   * Update the DB with a new name or description of a task
    * and updates the front end with this data.
    *
    * @param {String} newName
@@ -38,7 +38,7 @@ const Task = ({ taskData, handleDelete }) => {
   };
 
   /**
-   * Handles checkbox checked. Updates DB and updates the front
+   * Handle checkbox checked. Updates DB and updates the front
    * with the new data.
    *
    * @param {Event} e
@@ -50,7 +50,7 @@ const Task = ({ taskData, handleDelete }) => {
   };
 
   /**
-   * Updates current task in DB with new name and/or description
+   * Update current task in DB with new name and/or description
    *
    * @param {String} newName
    * @param {String} newDescription
